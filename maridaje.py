@@ -6,3 +6,9 @@ class Maridaje():
     def setMaridaje(self,nombre,descripcion):
         self.nombre = nombre
         self.descripcion = descripcion
+
+    def getNombreMaridaje(self):
+        return self.nombre
+       
+    def getDescripcionMaridaje(self):
+        return self.descripcion
