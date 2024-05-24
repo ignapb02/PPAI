@@ -6,6 +6,25 @@ class Enofilo():
         self.siguiendo = []
         self.coleccionFavoritos = []
 
+
+    def setApellido(self, apellido):
+        self.apellido = apellido
+    
+    def setNombre(self,nombre):
+        self.nombre = nombre
+    
+    def setImagen(self, imagen):
+        self.imagen = imagen
+    
+    def getApellido(self):
+        return self.apellido
+    
+    def getNombre(self):
+        return self.nombre
+    
+    def getImagen (self):
+        return self.imagen
+
     def getSiguiendo(self):
         return self.siguiendo
     
