@@ -23,3 +23,4 @@ class Varietal():
 
     def setTipoUva(self, valor=TipoUvas()):
         self.tipoUva = valor
+        
