@@ -1,3 +1,7 @@
+import datetime
+
+
+
 class Bodega:
     def __init__(self, region, nombre, periodoActualizacion, historia, descripcion, coordUbi):
         self.region = region
@@ -29,7 +33,7 @@ class Bodega:
         return self.nombre
     
     def getPeriodoActualizacion(self):
-        return self.periodoActuaizacion
+        return self.periodoActualizacion
     
     def getFechaUltActualizacion(self):
         return self.fechaUltimaActualizacion
@@ -47,8 +51,15 @@ class Bodega:
     def setNombre(self, valor):
         self.nombre = valor
 
-    def setFechaUltActualizacoin(self, valor):
+    def setFechaUltActualizacion(self, valor):
         self.fechaUltimaActualizacion = valor
 
     def setPeriodoActualizacion(self, valor):
         self.periodoActuaizacion = valor
+
+    # 
+
+    def sePuedeActualizarNovedades(self):
+        
+        diferencia = datetime.datetime.now() -  self.fechaUltimaActualizacion
+        return self.periodoActualizacion <= (diferencia.days/30)
