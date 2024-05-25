@@ -1,13 +1,24 @@
 class GestorImportacionNovedades:
 
     def __init__(self):
+        self.bodegas = []
+        self.bodegasActualizables = []
+        self.NombreBodegasActualizables = []
+
+    def opcionImportarActualizacionVinos(self):
         pass
 
-    def opcImportarNovedades():
-        pass
 
-    def buscarBodegasActualizar():
-        pass
+    def BuscarBodegasActualizables(self):
+
+        #Busca desde las bodegas que estan en periodo de actualizacion, las guarda en la lista bodegasActualizables junto a su nombre
+        # en la lista NombreBodegasActualizables (los cuales deberian tener el mismo indice)
+
+        for bodega in self.bodegas:
+
+            if bodega.sePuedeActualizarNovedades():
+                self.bodegasActualizables.append(bodega)
+                self.NombreBodegasActualizables.append(bodega.getNombre())
 
     def buscarActualizacionesVinos():
         pass

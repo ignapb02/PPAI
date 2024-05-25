@@ -60,6 +60,9 @@ class Bodega:
     # 
 
     def sePuedeActualizarNovedades(self):
+
+     #funcion que retorna true o false si a transcurrido el perriodo de actualizacion, toma la fecha actual y compara la diferencia 
+     #de meses con el periodo de actualizacion   
         
         diferencia = datetime.datetime.now() -  self.fechaUltimaActualizacion
         return self.periodoActualizacion <= (diferencia.days/30)
