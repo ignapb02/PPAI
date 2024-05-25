@@ -1,14 +1,20 @@
 class Bodega:
-    def __init__(self, descripcion=str(), ubicacion=str(), historia=str(), 
-                 nombre=str(), periodoActualizacion=int()):
-        
-        self.descripcion = descripcion
-        self.ubicacion = ubicacion
-        self.historia = historia
+    def __init__(self, region, nombre, periodoActualizacion, historia, descripcion, coordUbi):
+        self.region = region
+        self.vinos = []
         self.nombre = nombre
-        self.periodoActuaizacion = periodoActualizacion
-        self.fechaUltimaActualizacion = None
-    
+        self.periodoActualizacion = periodoActualizacion #!
+        self.historia = historia
+        self.descripcion = descripcion
+        self.coordUbi = []
+
+    def addVino(self, vino):
+        self.vinos.append(vino)
+
+    def mostrarVinos(self):
+        for vino in self.vinos:
+            vino.mostrarVino(self)
+
     # Metodos get para cada atributo
     def getDescripcion(self):
         return self.descripcion

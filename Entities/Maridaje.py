@@ -1,8 +1,11 @@
-class Maridaje():
-    def __init__(self,nombre=str(), descripcion=str()):
+class Maridaje:
+    def __init__(self, nombre, descripcion):
         self.nombre = nombre
         self.descripcion = descripcion
 
+    def sosMaridaje(self, busqueda):
+        return self.nombre == busqueda
+    
     def setMaridaje(self,nombre,descripcion):
         self.nombre = nombre
         self.descripcion = descripcion

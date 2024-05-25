@@ -1,5 +1,3 @@
-from tipoUva import *
-
 class Varietal():
     def __init__(self, descripcion=str(), porcentajeUva=float(), tipoUva=TipoUvas()):
         self.descripcion = descripcion
