@@ -21,3 +21,4 @@ class TipoUva:
 
     def setNombre(self, valor=str()):
         self.nombre = valor
+        
