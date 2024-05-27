@@ -1,40 +1,47 @@
-class GestorImportacionNovedades:
+from Interface.InterfazApiBodega import InterfazApiBodega
+from Interface.PantallaImportacionNovedades import PantallaImportacionNovedades
 
-    def __init__(self):
+class GestorImportacionNovedades:
+    def __init__(self, pantallaImportacionNovedades):
         self.bodegas = []
         self.bodegasActualizables = []
-        self.NombreBodegasActualizables = []
+        self.nombreBodegasActualizables = []
+        self.pantallaImportacionNovedades = pantallaImportacionNovedades
 
     def opcionImportarActualizacionVinos(self):
-        pass
+        self.buscarBodegasActualizables()
+        self.pantallaImportacionNovedades.mostrarBodegasActualizables(self.nombreBodegasActualizables)
+        bodegaSeleccionada = self.pantallaImportacionNovedades.tomarBodegasSeleccionada()
+        if bodegaSeleccionada:
+            actualizacionesVinos = self.obtenerActVinosBodegaSeleccionada(bodegaSeleccionada)
+            self.obtenerVinosActualizables(bodegaSeleccionada)
 
-
-    def BuscarBodegasActualizables(self):
-
-        #Busca desde las bodegas que estan en periodo de actualizacion, las guarda en la lista bodegasActualizables junto a su nombre
-        # en la lista NombreBodegasActualizables (los cuales deberian tener el mismo indice)
-
+    def buscarBodegasActualizables(self):
         for bodega in self.bodegas:
-
             if bodega.sePuedeActualizarNovedades():
                 self.bodegasActualizables.append(bodega)
-                self.NombreBodegasActualizables.append(bodega.getNombre())
+                self.nombreBodegasActualizables.append(bodega.getNombre())
 
-    def buscarActualizacionesVinos():
+    def obtenerActVinosBodegaSeleccionada(self, bodegaSeleccionada):
+        return InterfazApiBodega().obtenerActualizacionesVinos(bodegaSeleccionada)
+
+    def obtenerVinosActualizables(self, bodegaSeleccionada):
         pass
 
-    def determinarVinosActualizar():
+    def buscarActualizacionesVinos(self):
         pass
 
-    def actualizarOCrearVinos():
+    def determinarVinosActualizar(self):
         pass
 
-    def actualizarVinoExistente():
+    def actualizarOCrearVinos(self):
         pass
 
-    def crearVino():
-        #vino = Vino(bodega, nombre, random.randint(2000, 2024), None, random.randint(2000,5000))
+    def actualizarVinoExistente(self):
         pass
 
-    def buscarSeguidoresBodega():
+    def crearVino(self):
+        pass
+
+    def buscarSeguidoresBodega(self):
         pass
